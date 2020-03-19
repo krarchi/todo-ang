@@ -1,0 +1,12 @@
+<div id="myDIV" class="header">
+  <h2>My To Do List</h2>
+  <form (ngSubmit)="add()" [formGroup]="formGroup">
+    <input formControlName="name" class="input">
+    <button type="submit" class="addBtn">Add</button>
+  </form>
+</div>
+
+<ul id="myUL">
+  <li *ngFor="let item of items">ID: {{item.id}}<br>Name: {{item.name}}<br><input [(ngModel)]="value"><a href="#" (click)="update(item.id,value)">Edit</a><br><a href="#" (click)="delete(item.id)">Delete</a></li>
+</ul>
+
